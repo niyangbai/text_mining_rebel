@@ -27,12 +27,12 @@ def main(xml_file, dir, csv_file):
 
     xmis = os.listdir(dir)
     with open(csv_file,"w") as file:
-        file.write("\t".join(["id", "title", "context", "triplets"]) + "\n")
+        file.write("\t".join(["id", "context", "triplets"]) + "\n")
         for xmi in xmis:
             
             line = []
             
-            line.append(xmi[5:-4] + "\t")
+            line.append(xmi[5:-4])
 
             with open(f"{dir}/{xmi}", 'r', encoding='UTF-8') as f:
                 xmi_str = str(f.read())
