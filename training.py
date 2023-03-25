@@ -4,9 +4,12 @@ from transformers import AutoTokenizer, AutoModelForSeq2SeqLM, TrainingArguments
 from transformers import Trainer
 from transformers import AutoModelForSeq2SeqLM
 import torch
+import wandb
 import gc
 
 
+with open("key.txt") as f:
+    wandb.login(key = f.read())
 csv = pd.read_csv("data.csv", sep = "\t")
 csv = csv.dropna()
 tr, va, te = np.split(csv.sample(frac = 1), [int(.6*len(csv)), int(.8*len(csv))])
