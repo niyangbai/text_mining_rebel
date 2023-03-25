@@ -1,11 +1,24 @@
 from cassis import *
 import os
 import html
+import sys
 
 
-xml_file = "TypeSystem.xml"
-dir = "./startupminingtobi"
-csv_file = 'csvfile.csv'
+if len(sys.argv) > 4:
+    print("Please use only 3 arguments")
+    sys.exit(1)
+if sys.argv[1][-4:] == ".xml":
+    xml_file = sys.argv[1]
+else:
+    sys.exit(1)
+if sys.argv[2][-1] == "/":
+    dir = sys.argv[2]
+else:
+    sys.exit(1)
+if sys.argv[3][-4:] == ".csv":
+    csv_file = sys.argv[3]
+else:
+    sys.exit(1)
 
 def main(xml_file, dir, csv_file):
 
