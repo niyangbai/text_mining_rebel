@@ -24,3 +24,7 @@ The 02_training.py script trains the REBEL model using the training data set.
 #### 03_prediction.py
 
 The 03_prediction.py script predicts the finance-related relations from the test data set using the trained model.
+
+### Conclusion
+
+This project provides a simple approach to extract finance-related relations from text using the REBEL model. By following the instructions provided in this README file, users can use the Python scripts to process their data and extract the desired information.
