@@ -6,6 +6,9 @@ from transformers import AutoModelForSeq2SeqLM
 import torch
 import wandb
 import gc
+import os
+
+os.environ['WANDB_DISABLED']="true"
 
 
 with open("key.txt") as f:
@@ -92,4 +95,4 @@ trainer = Trainer(
 
 trainer.train()
 
-model.save_pretrained('./results_texts/2411_text_10epoch_nogroup')
+model.save_pretrained('./results/2411_text_10epoch_nogroup')
