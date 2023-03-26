@@ -12,7 +12,7 @@ import os
 key = "key.txt"
 data = "data.csv"
 model = "./rebel/rebel-large"
-output = './results/2411_text_10epoch_nogroup'
+output = './results'
 
 
 def main (key, data, model, output):
@@ -76,7 +76,7 @@ def main (key, data, model, output):
         
 
     training_args = TrainingArguments(
-        output_dir='./results_texts',          # output directory
+        output_dir=output,          # output directory
         num_train_epochs=10,             # total number of training epochs
         per_device_train_batch_size=16,  # batch size per device during training, from 16 to 8
         per_device_eval_batch_size=64,   # batch size for evaluation, from 64 to 32
@@ -103,7 +103,7 @@ def main (key, data, model, output):
 
     trainer.train()
 
-    model.save_pretrained(output)
+    model.save_pretrained(output + '/2411_text_10epoch_nogroup')
     
     
 if __name__ == "__main__":
