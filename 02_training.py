@@ -107,4 +107,4 @@ def main (key, data, model, output):
     
     
 if __name__ == "__main__":
-    main()
+    main(key, data, model, output)
