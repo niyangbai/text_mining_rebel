@@ -26,7 +26,7 @@ def main (key, data, model, output):
     tr, va, te = np.split(csv.sample(frac = 1), [int(.6*len(csv)), int(.8*len(csv))])
 
     tokenizer = AutoTokenizer.from_pretrained(model, local_files_only=True)
-    model = AutoModelForSeq2SeqLM.from_pretrained(model, local_files_only=True)
+    model = AutoModelForSeq2SeqLM.from_pretrained(model, local_files_only=True).cuda()
 
     gc.collect()
     torch.cuda.empty_cache()
