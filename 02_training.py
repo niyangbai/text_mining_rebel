@@ -11,7 +11,7 @@ import os
 
 key = "key.txt"
 data = "data.csv"
-model = "./rebel/rebel-large"
+model = "Babelscape/rebel-large"
 output = './results'
 
 
